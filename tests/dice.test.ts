@@ -41,12 +41,7 @@ describe("test dice", () => {
 
 describe("test dice manager", () => {
   let fakeRng = new FakeRandomSource(diceRollInputs);
-  let diceManager: DiceManager;
-
-  beforeEach(() => {
-    fakeRng = new FakeRandomSource(diceRollInputs);
-    diceManager = new DiceManager(fakeRng);
-  });
+  let diceManager: DiceManager = new DiceManager(fakeRng);
 
   it("should add dice to the manager", () => {
     diceManager.setDice(3);
@@ -59,5 +54,17 @@ describe("test dice manager", () => {
 
     expect(rollResult.total).toBe(3);
     expect(rollResult.rolls).toEqual([1, 2]);
+    expect(rollResult.isAllRollsIdentical).toBe(false);
+  });
+
+  it("should identify when all rolls are identical", () => {
+    fakeRng = new FakeRandomSource([0.5, 0.5] as NonEmptyArray<number>);
+    diceManager = new DiceManager(fakeRng);
+    diceManager.setDice(2);
+    const rollResult = diceManager.rollAll();
+
+    expect(rollResult.total).toBe(8);
+    expect(rollResult.rolls).toEqual([4, 4]);
+    expect(rollResult.isAllRollsIdentical).toBe(true);
   });
 });

@@ -3,6 +3,7 @@ import { Dice, type DiceRollResult } from "./Dice";
 
 type MultipleDiceRollResult = {
   total: number;
+  isAllRollsIdentical: boolean;
   rolls: Array<DiceRollResult>;
 };
 
@@ -11,7 +12,7 @@ export class DiceManager {
 
   constructor(private rng: RandomSource) {}
 
-  setDice(count: number = 1): void {
+  setDice(count: number = 2): void {
     this.dice = [];
     for (let i = 0; i < count; i++) {
       this.dice.push(new Dice(this.rng));
@@ -28,8 +29,11 @@ export class DiceManager {
       (previousValue, currentValue) => previousValue + currentValue,
     );
 
+    const isAllRollsIdentical = rolls.every((roll) => roll === rolls[0]);
+
     return {
       total,
+      isAllRollsIdentical,
       rolls,
     };
   }
