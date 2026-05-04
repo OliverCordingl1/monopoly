@@ -1,5 +1,95 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Helvetica Condensed";
+  src: url("/fonts/helvetica-condensed/helvetica-condensed-regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Condensed";
+  src: url("/fonts/helvetica-condensed/helvetica-condensed-bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Kabel Std";
+  src: url("/fonts/itc-kabel-std/itc-kabel-std-book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Kabel Std";
+  src: url("/fonts/itc-kabel-std/itc-kabel-std-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Kabel Std";
+  src: url("/fonts/itc-kabel-std/itc-kabel-std-demi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Kabel Std";
+  src: url("/fonts/itc-kabel-std/itc-kabel-std-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Kabel Std";
+  src: url("/fonts/itc-kabel-std/itc-kabel-std-ultra.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: "Ubuntu", sans-serif;
+  --font-sans: "Helvetica Condensed", sans-serif;
+
+  --font-board: "ITC Kabel Std", sans-serif;
+  --font-instructions: "Helvetica Condensed", sans-serif;
+
+  /* Property Colours */
+  --color-brown: hsl(18 48% 40%);
+  --color-blue-light: hsl(200 89% 82%);
+  --color-blue-dark: hsl(203 100% 37%);
+  --color-pink: hsl(325 68% 54%);
+  --color-orange: hsl(33 93% 54%);
+  --color-red: hsl(357 88% 53%);
+  --color-red-light: hsl(0 100% 66%);
+  --color-yellow: hsl(57 100% 50%);
+  --color-green: hsl(144 70% 41%);
+
+  /* Property Accent Colours (for hover state) */
+  --color-brown-accent: hsl(18 48% 32%);
+  --color-blue-light-accent: hsl(200 89% 74%);
+  --color-blue-dark-accent: hsl(203 100% 29%);
+  --color-pink-accent: hsl(325 68% 46%);
+  --color-orange-accent: hsl(33 93% 46%);
+  --color-red-accent: hsl(357 88% 45%);
+  --color-red-light-accent: hsl(0 100% 58%);
+  --color-yellow-accent: hsl(57 100% 42%);
+  --color-green-accent: hsl(144 70% 33%);
+
+  /* General Colours */
+  --color-white: #ffffff;
+  --color-white-40: rgba(255, 255, 255, 0.4);
+  --color-black: #000000;
+  --color-black-40: rgba(0, 0, 0, 0.4);
+  --color-background: #d9e8d6;
 }
